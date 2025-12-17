@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#61dafb" />
+    <meta name="theme-color" content="#696969" />
     <title>Сайт временно недоступен</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -11,7 +11,8 @@
     />
     <style>
       :root {
-        --theme-color: #61dafb; /* основной цвет темы */
+        --theme-color: #696969;
+        --dark-gray: #333333;
       }
       body {
         display: flex;
@@ -25,9 +26,12 @@
         font-family: "Montserrat", sans-serif;
         text-align: center;
         line-height: 1.6;
+        overflow: hidden;
+        position: relative;
       }
       h1, p, .contact, .footer {
         color: var(--theme-color);
+        z-index: 2;
       }
       .contact a {
         color: var(--theme-color);
@@ -38,6 +42,21 @@
       }
       .footer {
         color: #a8a8a8;
+      }
+      .snowflake {
+        position: absolute;
+        color: white;
+        font-size: 1em;
+        opacity: 0.8;
+        animation: fall linear infinite;
+      }
+      @keyframes fall {
+        0% {
+          transform: translateY(-10vh);
+        }
+        100% {
+          transform: translateY(100vh);
+        }
       }
       @media (max-width: 600px) {
         h1 {
@@ -64,6 +83,20 @@
     <footer class="footer">
       © Ступников Арсений Сергеевич | Все права защищены | 2024-2025
     </footer>
+    <script>
+      function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.textContent = '❄';
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+        snowflake.style.opacity = Math.random();
+        document.body.appendChild(snowflake);
+        setTimeout(() => {
+          snowflake.remove();
+        }, 5000);
+      }
+      setInterval(createSnowflake, 300);
+    </script>
   </body>
 </html>
-
