@@ -3,65 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#61dafb" />
     <title>Сайт временно недоступен</title>
-    <!-- Подключение шрифта Montserrat -->
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      :root {
+        --theme-color: #61dafb; /* основной цвет темы */
+      }
       body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-        height: 100vh;
+        min-height: 100vh;
+        margin: 0;
         background-color: #282c34;
         color: white;
         font-family: "Montserrat", sans-serif;
         text-align: center;
-        margin: 0;
+        line-height: 1.6;
       }
-      h1 {
-        font-size: 3em;
-        margin: 0;
+      h1, p, .contact, .footer {
+        color: var(--theme-color);
       }
-      p {
-        font-size: 1.5em;
-        margin: 10px 0;
+      .contact a {
+        color: var(--theme-color);
       }
-      a {
-        color: #61dafb;
-        text-decoration: none;
-        font-weight: bold;
-      }
-      a:hover {
+      .contact a:hover,
+      .contact a:focus {
         text-decoration: underline;
       }
-      .contact {
-        margin-top: 20px;
-        font-size: 1.2em;
-      }
       .footer {
-        margin-top: auto;
-        padding: 20px;
-        font-size: 1.2em;
         color: #a8a8a8;
+      }
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2em;
+        }
+        p {
+          font-size: 1em;
+        }
       }
     </style>
   </head>
   <body>
-    <h1>Сайт временно недоступен</h1>
-    <p>В процессе разработки.</p>
-    <p>Пожалуйста, приходите позже.</p>
-    <div class="contact">
-      <p>Свяжитесь со мной:</p>
-      <p>
-        <a href="mailto:admin@senyer7.ru" target="_blank">admin@senyer7.ru</a>
-      </p>
-    </div>
-    <div class="footer">
+    <main>
+      <h1>Сайт временно недоступен</h1>
+      <p>В процессе разработки.</p>
+      <p>Пожалуйста, приходите позже.</p>
+      <div class="contact">
+        <p>Свяжитесь со мной:</p>
+        <p>
+          <a href="mailto:admin@senyer7.ru" target="_blank" rel="noopener">admin@senyer7.ru</a>
+        </p>
+      </div>
+    </main>
+    <footer class="footer">
       © Ступников Арсений Сергеевич | Все права защищены | 2024-2025
-    </div>
+    </footer>
   </body>
 </html>
+
