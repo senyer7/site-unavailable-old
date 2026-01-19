@@ -11,8 +11,9 @@
     />
     <style>
       :root {
-        --theme-color: #696969;
+        --theme-color: #fffff;
         --dark-gray: #333333;
+        --title-color: #D9D9D9;
       }
       body {
         display: flex;
@@ -29,8 +30,8 @@
         overflow: hidden;
         position: relative;
       }
-      h1, p, .contact, .footer {
-        color: var(--theme-color);
+      h1, {
+        color: var(--title-color);
         z-index: 2;
       }
       .contact a {
@@ -42,21 +43,6 @@
       }
       .footer {
         color: #a8a8a8;
-      }
-      .snowflake {
-        position: absolute;
-        color: white;
-        font-size: 1em;
-        opacity: 0.8;
-        animation: fall linear infinite;
-      }
-      @keyframes fall {
-        0% {
-          transform: translateY(-10vh);
-        }
-        100% {
-          transform: translateY(100vh);
-        }
       }
       @media (max-width: 600px) {
         h1 {
@@ -74,29 +60,15 @@
       <p>В процессе разработки.</p>
       <p>Пожалуйста, приходите позже.</p>
       <div class="contact">
-        <p>Свяжитесь со мной:</p>
+        <p>Обратная связь:</p>
         <p>
           <a href="mailto:admin@senyer7.ru" target="_blank" rel="noopener">admin@senyer7.ru</a>
         </p>
       </div>
     </main>
     <footer class="footer">
-      © Ступников Арсений Сергеевич | Все права защищены | 2024-2025
+      © Ступников Арсений Сергеевич | Все права защищены
+     <a>2023-2026</a>
     </footer>
-    <script>
-      function createSnowflake() {
-        const snowflake = document.createElement('div');
-        snowflake.classList.add('snowflake');
-        snowflake.textContent = '❄';
-        snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
-        snowflake.style.opacity = Math.random();
-        document.body.appendChild(snowflake);
-        setTimeout(() => {
-          snowflake.remove();
-        }, 5000);
-      }
-      setInterval(createSnowflake, 300);
-    </script>
   </body>
 </html>
