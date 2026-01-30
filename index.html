@@ -3,72 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#696969" />
+    <meta name="theme-color" content="#3d3d3d" />
     <title>Сайт временно недоступен</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
-        --theme-color: #fffff;
-        --dark-gray: #333333;
-        --title-color: #D9D9D9;
+        --gray-800: #2d2d2d;
+        --gray-700: #3d3d3d;
+        --gray-600: #525252;
+        --gray-500: #6b6b6b;
+        --gray-400: #8a8a8a;
+        --gray-300: #a8a8a8;
+        --gray-200: #c4c4c4;
+        --gray-100: #e0e0e0;
       }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
       body {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         min-height: 100vh;
-        margin: 0;
-        background-color: #282c34;
-        color: white;
+        background: var(--gray-700);
+        color: var(--gray-100);
         font-family: "Montserrat", sans-serif;
         text-align: center;
-        line-height: 1.6;
-        overflow: hidden;
-        position: relative;
+        line-height: 1.8;
       }
-      h1, {
-        color: var(--title-color);
-        z-index: 2;
+
+      main {
+        padding: 2rem;
+        max-width: 460px;
       }
+
+      .line {
+        width: 40px;
+        height: 1px;
+        background: var(--gray-400);
+        margin: 0 auto 2.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        margin-bottom: 1.5rem;
+        color: var(--gray-100);
+      }
+
+      .message {
+        color: var(--gray-300);
+        font-size: 0.95rem;
+        font-weight: 300;
+        margin-bottom: 3rem;
+      }
+
+      .contact-label {
+        font-size: 0.75rem;
+        color: var(--gray-400);
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.75rem;
+      }
+
       .contact a {
-        color: var(--theme-color);
+        color: var(--gray-200);
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+        border-bottom: 1px solid var(--gray-500);
+        padding-bottom: 2px;
       }
-      .contact a:hover,
-      .contact a:focus {
-        text-decoration: underline;
+
+      .contact a:hover {
+        color: var(--gray-100);
+        border-color: var(--gray-300);
       }
-      .footer {
-        color: #a8a8a8;
+
+      footer {
+        position: absolute;
+        bottom: 2rem;
+        color: var(--gray-400);
+        font-size: 0.75rem;
+        font-weight: 300;
+        letter-spacing: 0.05em;
       }
+
       @media (max-width: 600px) {
-        h1 {
-          font-size: 2em;
+        main {
+          padding: 1.5rem;
         }
-        p {
-          font-size: 1em;
+
+        h1 {
+          font-size: 1.25rem;
+        }
+
+        footer {
+          bottom: 1.5rem;
+          padding: 0 1rem;
         }
       }
     </style>
   </head>
   <body>
     <main>
+      <div class="line"></div>
       <h1>Сайт временно недоступен</h1>
-      <p>В процессе разработки.</p>
-      <p>Пожалуйста, приходите позже.</p>
+      <p class="message">Ведутся технические работы.<br>Пожалуйста, загляните позже.</p>
       <div class="contact">
-        <p>Обратная связь:</p>
-        <p>
-          <a href="mailto:admin@senyer7.ru" target="_blank" rel="noopener">admin@senyer7.ru</a>
-        </p>
+        <p class="contact-label">Обратная связь</p>
+        <a href="mailto:admin@senyer7.ru">admin@senyer7.ru</a>
       </div>
     </main>
-    <footer class="footer">
-      © Ступников Арсений Сергеевич | Все права защищены
-     <a>2023-2026</a>
+    <footer>
+      © Ступников Арсений Сергеевич — 2023–2026
     </footer>
   </body>
 </html>
